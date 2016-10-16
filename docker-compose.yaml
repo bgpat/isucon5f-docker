@@ -1,0 +1,33 @@
+version: '2'
+services:
+  image1:
+    image: bgpat/isucon5f-image
+    depends_on:
+     - api
+    ports:
+     - "6022:22"
+     - "6080:80"
+  image2:
+    image: bgpat/isucon5f-image
+    depends_on:
+     - api
+    ports:
+     - "7022:22"
+     - "7080:80"
+  image3:
+    image: bgpat/isucon5f-image
+    depends_on:
+     - api
+    ports:
+     - "8022:22"
+     - "8080:80"
+  api:
+    image: bgpat/isucon5f-api
+    expose:
+     - "8080-8082"
+     - "8988"
+     - "8443"
+  bench:
+    image: bgpat/isucon5f-bench
+    ports:
+     - "5022:22"
