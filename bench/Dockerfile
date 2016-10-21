@@ -7,7 +7,8 @@ RUN apt-get update && \
         libcurl4-openssl-dev libjpeg-turbo8 libjpeg-turbo8-dev \
         libpng12-0 libpng12-dev libmcrypt4 libmcrypt-dev libtidy-0.99-0 \
         libtidy-dev libxml2-dev libxslt1-dev readline-common re2c curl \
-        pkg-config software-properties-common supervisor openssh-server jq && \
+        pkg-config software-properties-common supervisor openssh-server jq \
+        language-pack-ja-base language-pack-ja && \
     add-apt-repository ppa:webupd8team/java && \
     add-apt-repository ppa:cwchien/gradle && \
     echo 'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main' > /etc/apt/sources.list.d/pgdg.list && \
