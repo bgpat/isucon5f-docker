@@ -30,6 +30,9 @@ RUN useradd -d /home/isucon -s /bin/bash isucon -G sudo && chown isucon:isucon -
     cd /home/isucon/isucon5-final/bench && sudo -u isucon gradle compileJava && \
     cp /home/isucon/isucon5-final/provisioning/bench/files/supervisor.*.conf /etc/supervisor/conf.d/
 
+ENV LC_ALL ja_JP.UTF-8
+ENV TERM xterm-256color
+
 EXPOSE 22
 
 CMD supervisord -c /etc/supervisor/supervisord.conf; service ssh start; tail -f /dev/null
